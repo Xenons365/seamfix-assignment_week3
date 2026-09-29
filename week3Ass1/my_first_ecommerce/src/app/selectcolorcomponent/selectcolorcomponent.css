@@ -1,0 +1,44 @@
+.picker {
+  max-width: 320px;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.swatch {
+  aspect-ratio: 1;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.swatch:hover {
+  transform: scale(1.15);
+}
+
+.swatch.selected {
+  border-color: #222;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #222;
+  transform: scale(1.1);
+}
+
+.current {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

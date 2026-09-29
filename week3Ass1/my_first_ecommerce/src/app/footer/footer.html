@@ -1,0 +1,73 @@
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top-block">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-4 col-sm-5">
+          <div class="lt-block">
+            <div class="footer-logo"><span>Empire Textile</span></div>
+            <ul>
+              <li><a href="https://twitter.com/empiretextiles" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a></li>
+              <li><a href="https://www.facebook.com/EmpireTextiles" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href="https://www.pinterest.com/empiretextiles" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-pinterest"></i></a></li>
+              <li><a href="https://instagram.com/empiretextiles" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-3">
+          <div class="link-block">
+            <!-- Task 1c: built-in pipe rendering the header text -->
+            <h3>{{ 'categories' | titlecase }}</h3>
+            <ul>
+              @for (item of categories; track item.url) {
+                <li><a [href]="item.url">{{ item.label }}</a></li>
+              }
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4">
+          <div class="link-block left-gap">
+            <h3>{{ 'quick links' | titlecase }}</h3>
+            <ul>
+              @for (item of quickLinks; track item.url) {
+                <li><a [href]="item.url">{{ item.label }}</a></li>
+              }
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div
+            class="newsletter-block"
+            [ngClass]="{ 'highlighted': isNewsletterHighlighted }"
+            [ngStyle]="{ 'border-top': isNewsletterHighlighted ? '2px solid #c00' : 'none' }"
+          >
+            <h3>{{ 'get the newsletter' | titlecase }}</h3>
+            <form class="newsletter-form" (submit)="$event.preventDefault()">
+              <div class="form-group">
+                <input type="text" class="form-control" name="email" placeholder="Enter Email Address">
+              </div>
+              <button type="button" class="btn btn-default">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom-block">
+      <ul>
+        <li><img src="/img/webpages/item_99_28_card-img1__q-90.png" alt=""></li>
+        <li><img src="/img/webpages/item_99_28_card-img2__q-90.png" alt=""></li>
+        <li><img src="/img/webpages/item_99_28_card-img3__q-90.png" alt=""></li>
+        <li><img src="/img/webpages/item_99_28_card-img4__q-90.png" alt=""></li>
+        <li><img src="/img/webpages/item_99_28_card-img5__q-90.png" alt=""></li>
+        <li><img src="/img/webpages/item_99_28_card-img6__q-90.png" alt=""></li>
+      </ul>
+      <p>©2023 Empire Textile. All Rights Reserved</p>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</footer>

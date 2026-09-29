@@ -1,0 +1,28 @@
+<div class="picker">
+  <h3>Select a colour</h3>
+
+  <div class="swatches">
+    @for (colour of colours; track colour) {
+      <button
+        type="button"
+        class="swatch"
+        [style.background-color]="colour"
+        [class.selected]="colour === selected"
+        [attr.aria-label]="colour"
+        [attr.aria-pressed]="colour === selected"
+        [title]="colour"
+        (click)="select(colour)"
+      ></button>
+    }
+  </div>
+
+  <p class="current">
+    Selected:
+    @if (selected) {
+      <span class="chip" [style.background-color]="selected"></span>
+      {{ selected }}
+    } @else {
+      none
+    }
+  </p>
+</div>
